@@ -7,3 +7,4 @@ karma.conf.js
 tslint.json
 tsdoc.json
 tsconfig.json
+/demo
