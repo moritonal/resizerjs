@@ -1,6 +1,6 @@
 {
   "name": "resizerjs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Handle custom resizing of flex box elements like a boss",
   "main": "./dist/resizer.js",
   "scripts": {
@@ -36,5 +36,7 @@
     "underscore": "^1.8.3",
     "parcel-bundler": "^1.12.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "events": "^3.2.0"
+  }
 }

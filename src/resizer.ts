@@ -37,6 +37,8 @@ interface IResizerOptions {
   className?: string;
 }
 
+import { EventEmitter } from "events"
+
 /**
  * Resizer Class
  */
@@ -175,6 +177,11 @@ export default class Resizer {
   private dragging: boolean = false;
 
   /**
+   * Event emitter
+   */
+  private events = new EventEmitter()
+
+  /**
    * Resizer constructor
    * @class Resizer
    * @classdesc This class
@@ -194,6 +201,10 @@ export default class Resizer {
     }
 
     this.setup();
+  }
+
+  public on(event: string, action: (...args: any) => void) {
+    this.events.addListener(event, action);
   }
 
   /**
@@ -302,6 +313,7 @@ export default class Resizer {
       e.preventDefault();
       this.setHandleX(e.pageX - this.container.getBoundingClientRect().left - this.offsetX);
       this.setDragging(false);
+      this.events.emit("resize", this);
     }
   }
 
