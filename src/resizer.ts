@@ -40,7 +40,7 @@ interface IResizerOptions {
 /**
  * Resizer Class
  */
-class Resizer {
+export default class Resizer {
 
   /**
    * Default Options
